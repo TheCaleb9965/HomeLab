@@ -53,7 +53,7 @@ Here is the current network diagram, I'm still adjusting service IPs and as I do
 <img
   alt="home lab"
   src="https://github.com/user-attachments/assets/37edd5c9-2f95-4b92-993f-15a5eb7b631a"
-  style="max-width: 800px; width: 100%; height: auto;"
+  style="max-width: 1000px; width: 100%; height: auto;"
 >
 
 # Ongoing Work
