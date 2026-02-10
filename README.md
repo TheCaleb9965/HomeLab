@@ -45,3 +45,9 @@ No current VMs, infact it is still running windows but lets list the plans:
 - Migrate Windows Server 2019 VM to this device
 - Upon doing so we're going to remove 4gb RAM and the hard drive from HMR-SERV-2, reformat the drive and use a usb-c to sata adapter, and then add them to this device. (RAM is compatible) at that point this device will become HMR-SERV-2 and that device will become 3
 - That device will be left to exclusively run a secondary Twingate Connector and maybe a debian host I can use to allow friends and such to practice their CCNA skills.
+
+# Network Design
+Here is the current network diagram, I'm still adjusting service IPs and as I do this will be adjusted.
+
+<img width="3705" height="3450" alt="home lab (1)" src="https://github.com/user-attachments/assets/44d2e21f-eb2f-455f-9324-fc1db07da5aa" />
+
