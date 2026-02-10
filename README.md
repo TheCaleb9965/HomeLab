@@ -52,3 +52,22 @@ Here is the current network diagram, I'm still adjusting service IPs and as I do
 
 <img width="3705" height="3515" alt="home lab" src="https://github.com/user-attachments/assets/37edd5c9-2f95-4b92-993f-15a5eb7b631a" />
 
+# Ongoing Work
+##2/9/26
+Well wrapping up today around 11pm after a VERY long day working on the lab. Last night I was working on setting up AD for LDAP and RADIUS authentication, well when I tested a user on the ldap within my OPNSense I suddenly didn't have access to the router at ALL. This includes root access within the CLI which is supposed to be unchanged regardless of GUI access/authentication settings. Attempted a password recovery using an image on a USB key which failed, thus giving me no choice but to reset everything to a fresh image.
+
+At this point I decided that I would go ahead do a couple of housekeeping tasks, such as actually setting up my subinterfaces as opposed to using a cable for each VLAN, which mostly frees up some cable space in the rack, but also gives me back some of my port density on my OPNSense router if I wanted to create any sort of DMZs or separate LANs in the future. 
+
+Lets go ahead and list everything I actually accomplished today
+- OPNsense base configuration
+- Created subinterfaces for VLANs 10/20/30/40 on LAN port
+- DHCP scopes for VLAN 10 and 20
+- Made HMR-SERV-2 VLAN aware, setting proxmox host IP to the proper 10.0.10.251 and giving the adapter for VLAN 20 the IP 10.0.20.2 (unsure if this is needed, will research at a later time.)
+- adjusted hostname and FQDN within proxmox on HMR-SERV-2, HMR-SERV-1 is still pending.
+- adjusted IP for DNS server to 10.0.20.3 to be inline with VLAN scheme.
+- Issue (resolved) - DHCP service in OPNSense was not allowing subinterfaces to run the DORA process, thus not assigning IPs. I had it set to the original LAN as opposed to allowing each of the subinterfaces on there instead. This has now been resolved.
+- Housekeeping - connected all ports from OPNSense to switch port and generated traffic. used mac table to then determine which port is which NIC slot on the router (Left to Right is IGB4,IGB5,IGB0,IGB1,IGB2,IGB3) and physically labelled accordingly.
+- Housekeeping - upon configuring subinterfaces, cleaned up cables out of rack, hopefully by the end of the week I'll be in a place where I'm happy to take a picture of this thing.
+- Brought diagram mostly up to date, as I re onboard different services I will add them in there but everything that is currently online is there.
+- Oh yeah and most importantly created ALL the firewall rules again, needless to say I will be downloading some sort of backup on my PC before any changes going forward...guess thats one of those things you have to get burned to learn.
+And that's about it, I'm sure I'm missing something considering the sheer amount of work I did today but I'd say thats the important bit.
