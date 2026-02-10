@@ -49,5 +49,6 @@ No current VMs, infact it is still running windows but lets list the plans:
 # Network Design
 Here is the current network diagram, I'm still adjusting service IPs and as I do this will be adjusted.
 
-<img width="3705" height="3450" alt="home lab (1)" src="https://github.com/user-attachments/assets/44d2e21f-eb2f-455f-9324-fc1db07da5aa" />
+
+<img width="3705" height="3515" alt="home lab" src="https://github.com/user-attachments/assets/37edd5c9-2f95-4b92-993f-15a5eb7b631a" />
 
