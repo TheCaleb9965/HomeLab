@@ -17,5 +17,31 @@ And thus begins the woes of learning a new platform and putting my skills to the
 ## Distribution
 
 For my switch I have a Dell N1548P that I received from a client previously, this device actually has propelled my career in networking. As I was originally studying for my CCNA it forced me to learn the concepts as opposed to just what Cisco wants since it works *relatively* the same but just enough different to be ... quite an annoyance.
+I believe here is a good place to add my VLAN assignments (note these may change depending on my mood.
+- VLAN 10 - 10.0.10.0/24 - Primary Management
+- VLAN 20 - 10.0.20.0/24 - Primary Network Services
+- VLAN 30 - 10.0.30.0/24 - VMs
+- VLAN 40 - 10.0.40.0/24 - Lab MGMT
+- VLAN 50 - 10.0.50.0/24 - Users
 
-VMs (To be added after current troubleshooting session)
+I realize that at my current size 5 /24 networks is somewhere in the range of 1250 useable IPs and theres no possible way I could reach that but I clearly have plenty of room to waste some IPs :P
+
+## VMs
+
+So currently I have 2 Proxmox Nodes (i.e. old laptops) in my lab, specs are as follows;
+
+### HMR-SERV-1 - Intel i7-9750H (12 core), RTX 2060, 16gb RAM, 500gb Hard Drive
+- Monitoring
+- Twingate Connector
+- Ticketing Software (How I keep track of everything I'm doing, forces me to have some self discipline)
+- Private Rocket Chat
+- Minecraft Server (doesn't really get used, just have the server setup and space reserved for when I feel like playing)
+
+### HMR-SERV-2 - Intel i3-7100u (4 core), minimal graphics, 6gb RAM, 1tb Hard Drive
+- Windows Server 2019 (DNS, going to be setting up DHCP within here also in the future
+
+### HMR-SERV-3 (To be added) - Intel i3-1215u (6 core), minimal graphics, 8gb RAM, 250gb Hard Drive
+No current VMs, infact it is still running windows but lets list the plans:
+- Migrate Windows Server 2019 VM to this device
+- Upon doing so we're going to remove 4gb RAM and the hard drive from HMR-SERV-2, reformat the drive and use a usb-c to sata adapter, and then add them to this device. (RAM is compatible) at that point this device will become HMR-SERV-2 and that device will become 3
+- That device will be left to exclusively run a secondary Twingate Connector and maybe a debian host I can use to allow friends and such to practice their CCNA skills.
