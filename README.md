@@ -56,6 +56,8 @@ Here is the current network diagram, I'm still adjusting service IPs and as I do
 ## 2/9/26
 Well wrapping up today around 11pm after a VERY long day working on the lab. Last night I was working on setting up AD for LDAP and RADIUS authentication, well when I tested a user on the ldap within my OPNSense I suddenly didn't have access to the router at ALL. This includes root access within the CLI which is supposed to be unchanged regardless of GUI access/authentication settings. Attempted a password recovery using an image on a USB key which failed, thus giving me no choice but to reset everything to a fresh image.
 
+I believe that this was caused by some glitch with the replication from AD to the OPNSense users. However, not having access I wasn't able to dig around and find out.
+
 At this point I decided that I would go ahead do a couple of housekeeping tasks, such as actually setting up my subinterfaces as opposed to using a cable for each VLAN, which mostly frees up some cable space in the rack, but also gives me back some of my port density on my OPNSense router if I wanted to create any sort of DMZs or separate LANs in the future. 
 
 Lets go ahead and list everything I actually accomplished today
