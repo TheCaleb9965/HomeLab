@@ -63,8 +63,8 @@ Lets go ahead and list everything I actually accomplished today
 - Created subinterfaces for VLANs 10/20/30/40 on LAN port
 - DHCP scopes for VLAN 10 and 20
 - Made HMR-SERV-2 VLAN aware, setting proxmox host IP to the proper 10.0.10.251 and giving the adapter for VLAN 20 the IP 10.0.20.2 (unsure if this is needed, will research at a later time.)
-- adjusted hostname and FQDN within proxmox on HMR-SERV-2, HMR-SERV-1 is still pending.
-- adjusted IP for DNS server to 10.0.20.3 to be inline with VLAN scheme.
+- Adjusted hostname and FQDN within proxmox on HMR-SERV-2, HMR-SERV-1 is still pending.
+- Adjusted IP for DNS server to 10.0.20.3 to be inline with VLAN scheme.
 - Issue (resolved) - DHCP service in OPNSense was not allowing subinterfaces to run the DORA process, thus not assigning IPs. I had it set to the original LAN as opposed to allowing each of the subinterfaces on there instead. This has now been resolved.
 - Housekeeping - connected all ports from OPNSense to switch port and generated traffic. used mac table to then determine which port is which NIC slot on the router (Left to Right is IGB4,IGB5,IGB0,IGB1,IGB2,IGB3) and physically labelled accordingly.
 - Housekeeping - upon configuring subinterfaces, cleaned up cables out of rack, hopefully by the end of the week I'll be in a place where I'm happy to take a picture of this thing.
