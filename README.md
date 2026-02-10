@@ -47,7 +47,7 @@ No current VMs, infact it is still running windows but lets list the plans:
 - That device will be left to exclusively run a secondary Twingate Connector and maybe a debian host I can use to allow friends and such to practice their CCNA skills.
 
 # Network Design
-Here is the current network diagram, I'm still adjusting service IPs and as I do this will be adjusted.
+Here is the current network diagram, I'm still adjusting service IPs and as I do this will be adjusted. (I apologize for the sizing, It will have to stay like this until I get a proper website setup instead of github pages)
 
 <img width="1853" height="1758" alt="home lab drawio (1)" src="https://github.com/user-attachments/assets/eadcc33f-be53-4f9a-a052-708daeb51978" />
 
