@@ -170,8 +170,8 @@ We will also be removing our interface within VLAN 40, as it is not necessary. I
 en
 conf t
 hostname HMR-CSW-01
-enable secret mustanG819
-username Caleb secret mustanG819
+enable secret ****
+username Caleb secret *****
 line con 0
 logging synch
 login local
