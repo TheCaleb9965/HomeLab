@@ -170,8 +170,8 @@ We will also be removing our interface within VLAN 40, as it is not necessary. I
 en
 conf t
 hostname HMR-CSW-01
-enable secret ****
-username Caleb secret *****
+enable secret ********
+username ******* secret ********
 line con 0
 logging synch
 login local
@@ -185,12 +185,14 @@ wr mem
 ```
 
 ```
+conf t
+!
 vlan 10
-name Primary Management
+name Primary-Management
 exit
 !
 vlan 20
-name Primary Network Services
+name Primary-Network-Services
 exit
 !
 vlan 30
@@ -198,7 +200,7 @@ name VMs
 exit
 !
 vlan 40
-name Lab MGMT
+name Lab-MGMT
 exit
 !
 vlan 50
@@ -206,8 +208,10 @@ name Users
 exit
 !
 vlan 500
-name Test_VLAN
+name Test
 exit
+!
+no interface vlan 1
 !
 interface vlan 10
 desc remote_mgmt
@@ -215,7 +219,10 @@ ip address 10.0.10.254 255.255.255.0
 no shut
 exit
 !
-int 1/0/48
+```
+
+```
+int te1/0/48
 desc To_OPNSense
 switchport mode trunk
 switchport trunk encapsulation dot1q
@@ -226,36 +233,39 @@ shut
 no shut
 exit
 !
-int 1/0/47
+int te1/0/47
 desc To_HMR-Serv-3
 switchport mode trunk
 switchport trunk encapsulation dot1q
-switchport trunk allowed vlan <VLAN ID>,<VLAN ID>
+switchport trunk allowed vlan 10,20,30,40,50,500
 no spanning-tree portfast
 shut
 no shut
 exit
 !
-int 1/0/46
+int te1/0/46
 desc To_HMR-Serv-2
 switchport mode trunk
 switchport trunk encapsulation dot1q
-switchport trunk allowed vlan <VLAN ID>,<VLAN ID>
+switchport trunk allowed vlan 10,20,30,40,50,500
 no spanning-tree portfast
 shut
 no shut
 exit
 !
-int 1/0/45
+int te1/0/45
 desc To_HMR-Serv-1
 switchport mode trunk
 switchport trunk encapsulation dot1q
-switchport trunk allowed vlan <VLAN ID>,<VLAN ID>
+switchport trunk allowed vlan 10,20,30,40,50,500
 no spanning-tree portfast
 shut
 no shut
 exit
 !
+```
+
+```
 interface g1/0/1
 description To_CLB-RTR-1
 switchport mode access
@@ -283,10 +293,16 @@ spanning-tree portfast
 interface g1/0/44
 description To_CLB-Desktop
 switchport mode access
-switchport access vlan 10
+switchport access vlan 500
 spanning-tree portfast
 !
-interface range g1/0/4 - 43
+interface g1/0/43
+description To_No-FW-ISP
+switchport mode access
+switchport access vlan 500
+spanning-tree portfast
+!
+interface range g1/0/5 - 43
 shutdown
 !
 end
