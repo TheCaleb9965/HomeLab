@@ -37,10 +37,10 @@ So currently I have 2 Proxmox Nodes (i.e. old laptops) in my lab, specs are as f
 - Private Rocket Chat
 - Minecraft Server (doesn't really get used, just have the server setup and space reserved for when I feel like playing)
 
-### HMR-SERV-2 - Intel i3-7100u (4 core), minimal graphics, 6gb RAM, 1tb Hard Drive
+### HMR-SERV-2 - Intel i3-7100u (4 core), minimal graphics, 4gb RAM, 1tb Hard Drive
 - Windows Server 2019 (DNS, going to be setting up DHCP within here also in the future
 
-### HMR-SERV-3 (To be added) - Intel i3-1215u (6 core), minimal graphics, 8gb RAM, 250gb Hard Drive
+### HMR-SERV-3 (To be added) - Intel i3-1215u (6 core), minimal graphics, 12gb RAM, 250gb Hard Drive
 No current VMs, infact it is still running windows but lets list the plans:
 - Migrate Windows Server 2019 VM to this device
 - Upon doing so we're going to remove 4gb RAM and the hard drive from HMR-SERV-2, reformat the drive and use a usb-c to sata adapter, and then add them to this device. (RAM is compatible) at that point this device will become HMR-SERV-2 and that device will become 3
@@ -72,3 +72,16 @@ Lets go ahead and list everything I actually accomplished today
 - Brought diagram mostly up to date, as I re onboard different services I will add them in there but everything that is currently online is there.
 - Oh yeah and most importantly created ALL the firewall rules again, needless to say I will be downloading some sort of backup on my PC before any changes going forward...guess thats one of those things you have to get burned to learn.
 And that's about it, I'm sure I'm missing something considering the sheer amount of work I did today but I'd say thats the important bit.
+
+## 5/6/26
+Well good evening everybody! You guys have missed quite a lot. I did have a little hiatus as I burnt myself out extremely fast, I mean after the two 36 hour weekends back to back of learning proxmox and OPNsense I really really did not even want to see those names for a bit lol.
+
+However during this hiatus I did make a couple of acquisitions and upgrades for the network! Let's talk about it:
+- Picked up a 23u Dell fully enclosed rack for 75 bucks. Absolutely insane price on it, however I vastly underestimated the size and sent my girlfriend to get it...poor girl had quite a time.
+- Upgraded the switch from the Dell N1548P to a Cisco WS-C3850-12X48u, much newer switch. Also has the benefit of coming with 12 10gb ports natively as well as the NIM card modules for 4 more 10gb ports or 2 40gb ports.
+- Also picked up a new laptop to use as a proxmox node (will be named HMR-SERV-4 as that follows the scheme), which information will be added when I go through it (it was free so I haven't even looked at it yet)
+- also picked up more than enough 1ft and 4ft jumpers to hold me over for QUITE a while, hell of a lot easier than making them myself like I have and they were free from a decom at my current role :)
+- Finally we moved 2gb of ram from HMR-SERV-2 to the future HMR-SERV-3. This allows a little more flexibility on the HMR-SERV-3 for future VMS
+
+The idea behind moving the ram from HMR-SERV-2 - HMR-SERV-3 is pretty simple. I want to use the new laptop I got for my DHCP/DNS services, and ideally use the older HMR-SERV-2 as exclusively a storage server since it has the most hard drive space and that won't need terribly much in the way of resources. 
+  
