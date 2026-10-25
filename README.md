@@ -5,8 +5,7 @@ Hello, my name is Caleb. I'm creating this git to follow all changes, updates, i
 Alright lets get right into the thick of it. Currently the network is a standard 3 tier, with an integrated CCNA lab that I will touch on later on.
 
 - Primary Router - Riverbed CX-570
-- Primary Switch - Dell N1548P
-- CCNA Lab Equpment: 4x Cisco 1841, 1x Cisco 24 Port 3750, 1x Cisco 24 Port 3560, 2x Cisco 48 Port 2950 (Might be overkill but I got all that for 80 dollars so I'll find a use for it)
+- Primary Switch - Cisco WS-C3850-12X48u
 - ISP gateway - Provided by Cox
  
 ## Core
@@ -85,3 +84,25 @@ However during this hiatus I did make a couple of acquisitions and upgrades for 
 
 The idea behind moving the ram from HMR-SERV-2 - HMR-SERV-3 is pretty simple. I want to use the new laptop I got for my DHCP/DNS services, and ideally use the older HMR-SERV-2 as exclusively a storage server since it has the most hard drive space and that won't need terribly much in the way of resources. 
   
+## 10/22/2026 Update
+Took a little hiatus from messing with the lab as I've been working towards certifications, officially CCNA certified (hell yeah) but today we are back at it
+
+I got an extremely good deal on an R730, with a working raid card! It was 200 bucks, current specs below (planning to upgrade processors and add ram here in the near future)
+
+- 2x Xeon E5-2630 v3 for a total of 16 cores
+- 32gb ram
+- No GPU currently, however I have a rtx3060 I might add in at some point, still on the fence with that one.
+- Currently have 2 random 1tb drives I had laying around in it, will upgrade/add more as necessary.
+
+With this addition I am actually going to be moving ALL VMs to this device and expanding with other servers in the future when I max this one out (If)
+
+## 10/22/2026 Tasks
+
+Today we completed a couple of things. I started last night by doing the base configurations on the dell, and installing Proxmox. It is iDrac licensed so I set that up as well in case I need to bypass the proxmox installation itself for anything (much easier than hooking the thing up to the TV let me tell you).
+
+We then installed the following:
+- twingate connector (moved off HMR-SERV-1)
+- Technitium DNS (I went to open source for this because it uses almost 75% ram less than windows does, and until I have extra ram floating around it will stay. Eventually this will turn into a backup DNS and I'll setup another windows server.
+- I also setup nginx on both the proxmox host as well as the dns server so that I can skip the whole port at the end of the domain name thing. Got tired of typing x.x.x.x:8006 every time I needed to log back into proxmox lol
+
+As far as the lab network: It's gone, at least from me. I decided going forward I will virtualize labs now that I have my CCNA. So I actually sold the rack they came in as well as 3 of the switches and 3 of the routers on facebook marketplace. Got my 80 dollars back and was able to save a switch and router to give to my girlfriend as she is in school majoring in network engineering.
