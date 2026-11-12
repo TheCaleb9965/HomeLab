@@ -106,3 +106,23 @@ We then installed the following:
 - I also setup nginx on both the proxmox host as well as the dns server so that I can skip the whole port at the end of the domain name thing. Got tired of typing x.x.x.x:8006 every time I needed to log back into proxmox lol
 
 As far as the lab network: It's gone, at least from me. I decided going forward I will virtualize labs now that I have my CCNA. So I actually sold the rack they came in as well as 3 of the switches and 3 of the routers on facebook marketplace. Got my 80 dollars back and was able to save a switch and router to give to my girlfriend as she is in school majoring in network engineering.
+
+## 11/11/2026
+
+We'll we've been getting into the MUD this past week, approximately 15 images that had incorrect checksums or some other reason they couldn't be used
+
+BUT
+
+We now have both a PAVM and an evaluation VM for cisco ISE AND have configured the ISE lab as the *current* source of truth for authentication (Using TACACS+) on both the palo and our cisco switch. Although, I still have to configure the RADIUS side for the OPNSense Router.
+
+Taking a short break from the ISE adventures to configure a couple of things, this includes;
+- Docker VM (with Portainer)
+- NGINX proxy manager (I'm tired of doing manual reverse proxy on EVERY single device)
+
+All that being said, in order to get the full effect and learning experience of a real situation I will also be working on certificates for EVERYTHING in the lab. Cloudflare already provides a certificate for anything residing in my domain so we will be implementing that onto each device and setting it up on every device so we no longer get that "oh this webpage is no good" error :)
+
+Following these things it will be a combination of learning cisco ise and going back through the palo course to hopefully do my NGFW engineer test soon :D
+
+I am starting to really get the hand of VM management within proxmox, I'm not as intimidated by it as when I started.
+
+Think that's about it, I'll probably remember something 5 seconds after I commit this. lol
